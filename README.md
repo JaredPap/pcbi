@@ -1,4 +1,4 @@
-# HAKE: Hierarchy-Aware Knowledge Graph Embedding
+# KCHML: Knowledge-aware Contrastive Heterogeneous Molecular Graph Learning for Property Prediction
 This is the code of paper **Knowledge-aware Contrastive Heterogeneous Molecular
 Graph Learning for Property Prediction** 
 
