@@ -33,8 +33,8 @@ https://github.com/gnn4dr/DRKG provides the drug knowledge graph and its encodin
 ## Running
 
 ### Pre-train Models
-[pretrain.py](pretrain.py) 
-The pre-training process is described in detail in the file [finetune.py](finetune.py). 
+
+The pre-training process is described in detail in the file [pretrain.py](pretrain.py) . 
 
 The key innovations are [HMGEncoder.py](model%2FHMGEncoder.py) and [ContrastiveLoss.py](layers%2FContrastiveLoss.py).
 [HGTLayer.py](layers%2FHGTLayer.py) implements the message passing process between nodes and edges.
