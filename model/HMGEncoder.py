@@ -155,6 +155,11 @@ class HMGEncoder(nn.Module):
             graph_read_out = self.out(input_feature=g.ndata['h'], adj=adj, edge_attr=g.edata['h'])
         return graph_read_out
 
+    def reset_out(self):
+        self.out=SAGPoolReadout(embed_dim=hidden_feats,
+                                  out_dim=out_feats,
+                                  layer_num=2)
+
 # Example of usage
 if __name__ == '__main__':
     smi = "CC1=C(C)C=C2N(C[C@H](O)[C@H](O)[C@H](O)CO)C3=NC(=O)NC(=O)C3=NC2=C1"
