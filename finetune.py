@@ -41,6 +41,7 @@ class Reproduce(object):
 
         self.encoder = self.get_model()
         self.encoder.load_state_dict(torch.load(args['encoder_path'], map_location=self.device))
+        self.encoder.reset_out()
 
         self.predictor = Predictor(self.args["mol_dim"], data.task_num, self.args["predictor_dropout"]).to(self.device)
 
