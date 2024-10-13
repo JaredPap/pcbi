@@ -50,7 +50,7 @@ class ContrastiveLoss(nn.Module):
         # Create a mask for positive samples
         positives_mask = np.eye(m + n, k=n) + np.eye(m + n, k=-n)
         positives_mask = torch.from_numpy(positives_mask).to(self.device)
-        positives = similarity_matrix[positives_mask].view(m * 2, -1)
+        positives = similarity_matrix[positives_mask.type(torch.bool)].view(m * 2, -1)
 
         # Create a mask for negative samples
         negatives_mask = 1 - positives_mask - torch.from_numpy(np.eye(m + n)).to(self.device)
