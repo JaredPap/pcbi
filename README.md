@@ -26,9 +26,22 @@ pip install -r requirements.txt
 
 ## Preparing the Data
 
+### Pre-training Data
+For pre-training, we use 250K unlabeled molecules sampled from the ZINC 250 dataset. The data is aligned with the DRKG (Drug Repurposing Knowledge Graph). 
+
+- **Raw Pre-training Data**: The data can be accessed from the following sources:
+  - ZINC15: [zinc15_drugbank_canonical.csv](dataset/pretrain/zinc15_drugbank_canonical.csv)
+  - DRKG: [GitHub repository](https://github.com/gnn4dr/DRKG)
+
+
+### Knowledge Feature Initialization
+The element knowledge graph (EKG) is stored in the form of triples in `dataset/pretrain/ekg.csv`. The encoding method for the EKG is provided by [KGE-HAKE](https://github.com/MIRALab-USTC/KGE-HAKE/).
+
+Additionally, the drug knowledge graph is also encoded in the DRKG repository.
+
 ### `cluster.py`: Clustering Molecules for Model Training
 
-The `cluster.py` script is used for clustering molecules into batches based on molecular similarity. It generates batches for pre-training by clustering SMILES strings into groups and adding similar molecules to fill the batches.
+To achieve optimal molecular similarity within small batches, we use `cluster.py` to generate batches. A reference batch can be found in the directory `dataset/pretrain/`.
 
 #### Key Functions in `cluster.py`
 
