@@ -2,8 +2,6 @@ Certainly! Here's the updated version of the `README.md` with all the necessary 
 
 ---
 
-# KCHML: Knowledge-aware Contrastive Heterogeneous Molecular Graph Learning for Property Prediction
-
 ## Dependencies
 The following Python packages are required to run the code:
 
